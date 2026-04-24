@@ -41,7 +41,7 @@ To run this project locally, follow these steps:
 ---
 
 ## State Management Choice: Context API
-For this application, I chose to implement the Context API combined with standard React Hooks (`useState`, `useEffect`) rather than a heavier library like Redux Toolkit or Zustand[cite: 66].
+For this application, I chose to implement the Context API combined with standard React Hooks (`useState`, `useEffect`) rather than a heavier library like Redux Toolkit or Zustand.
 
 ### Why Context API?
 
