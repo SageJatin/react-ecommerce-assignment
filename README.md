@@ -10,7 +10,7 @@ A fully functional React e-commerce frontend built as a proof of work. It featur
 * **Data Fetching:** Axios (via DummyJSON API)
 
 ## Setup Instructions
-[cite_start]To run this project locally, follow these steps[cite: 65]:
+To run this project locally, follow these steps:
 
 1. Clone the repository:
    ```bash
@@ -41,10 +41,10 @@ A fully functional React e-commerce frontend built as a proof of work. It featur
 ---
 
 ## State Management Choice: Context API
-[cite_start]For this application, I chose to implement the Context API combined with standard React Hooks (`useState`, `useEffect`) rather than a heavier library like Redux Toolkit or Zustand[cite: 66].
+For this application, I chose to implement the Context API combined with standard React Hooks (`useState`, `useEffect`) rather than a heavier library like Redux Toolkit or Zustand[cite: 66].
 
 ### Why Context API?
 
-* **Scope and Scale:** The global state requirements for this mini-app are limited exclusively to authentication status (tokens) and the shopping cart array. [cite_start]Redux would introduce unnecessary boilerplate for a state tree of this size[cite: 66].
-* [cite_start]**Native Integration:** Context is built directly into React, requiring zero additional dependencies, which keeps the bundle size lightweight and build times fast[cite: 66].
-* [cite_start]**Seamless Persistence:** By tying the Context state to `localStorage` via a `useEffect` hook, we achieve the required cart persistence natively without needing external persist-gate libraries[cite: 59].
+* **Scope and Scale:** The global state requirements for this mini-app are limited exclusively to authentication status (tokens) and the shopping cart array. Redux would introduce unnecessary boilerplate for a state tree of this size.
+* **Native Integration:** Context is built directly into React, requiring zero additional dependencies, which keeps the bundle size lightweight and build times fast.
+* **Seamless Persistence:** By tying the Context state to `localStorage` via a `useEffect` hook, we achieve the required cart persistence natively without needing external persist-gate libraries.
