@@ -12,6 +12,77 @@
   margin-bottom: 2rem;
 }
 
+.searchContainer {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.noResults {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+  grid-column: 1 / -1; /* Spans the full width of the grid */
+  padding: 2rem;
+}
+
+.card {
+  /* Frosted Glass Effect */
+  background: rgba(30, 30, 35, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+  border-color: #3b82f6; /* Subtle blue glow on hover */
+}
+
+/* Update typography to pop against the dark glass */
+.productTitle {
+  color: #ffffff;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+.description {
+  color: #9ca3af;
+  line-height: 1.5;
+}
+
+.price {
+  color: #4ade80; /* Bright mint green for pricing */
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+.searchInput {
+  width: 100%;
+  max-width: 500px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  background: rgba(30, 30, 35, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.searchInput:focus {
+  border-color: #3b82f6;
+  background: rgba(40, 40, 45, 0.8);
+}
+
 .title {
   color: #333;
 }
@@ -31,41 +102,11 @@
   gap: 2rem;
 }
 
-.card {
-  background: white;
-  border: 1px solid #eaeaea;
-  border-radius: 8px;
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
 .image {
   width: 100%;
   height: 200px;
   object-fit: contain;
   margin-bottom: 1rem;
-}
-
-.productTitle {
-  font-size: 1.2rem;
-  margin: 0 0 0.5rem 0;
-  color: #222;
-}
-
-.description {
-  font-size: 0.9rem;
-  color: #666;
-  flex-grow: 1;
-  margin-bottom: 1rem;
-}
-
-.price {
-  font-size: 1.25rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  color: #111;
 }
 
 .addToCartBtn {

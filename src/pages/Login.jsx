@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import { loginUser } from "../services/api";
 import styles from "./Login.module.css";
 
 const Login = () => {
@@ -26,13 +26,10 @@ const Login = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post("https://dummyjson.com/auth/login", {
-        username: username,
-        password: password,
-      });
+      const data = await loginUser(username, password);
 
       // Store token in localStorage on success
-      localStorage.setItem("token", response.data.accessToken);
+      localStorage.setItem("token", data.accessToken);
       
       // Redirect to Products page
       navigate("/products");
