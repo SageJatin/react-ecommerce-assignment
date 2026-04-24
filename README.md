@@ -1,16 +1,50 @@
-# React + Vite
+# React E-Commerce Mini-App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fully functional React e-commerce frontend built as a proof of work. It features mock authentication, product browsing, and a fully persistent shopping cart.
 
-Currently, two official plugins are available:
+## Tech Stack
+* **Framework:** React (Vite)
+* **Routing:** React Router DOM
+* **State Management:** Context API
+* **Styling:** CSS Modules
+* **Data Fetching:** Axios (via DummyJSON API)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Setup Instructions
+[cite_start]To run this project locally, follow these steps[cite: 65]:
 
-## React Compiler
+1. Clone the repository:
+   ```bash
+   git clone [https://github.com/SageJatin/react-ecommerce-assignment.git](https://github.com/SageJatin/react-ecommerce-assignment.git)
+   ```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+2. Navigate into the project directory:
+   ```bash
+   cd react-ecommerce-web
+   ```
 
-## Expanding the ESLint configuration
+3. Install the dependencies:
+   ```bash
+   npm install
+   ```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+5. Open `http://localhost:5173` in your browser.
+
+**Test Credentials for Login:**
+* **Username:** `emilys`
+* **Password:** `emilyspass`
+
+---
+
+## State Management Choice: Context API
+[cite_start]For this application, I chose to implement the Context API combined with standard React Hooks (`useState`, `useEffect`) rather than a heavier library like Redux Toolkit or Zustand[cite: 66].
+
+### Why Context API?
+
+* **Scope and Scale:** The global state requirements for this mini-app are limited exclusively to authentication status (tokens) and the shopping cart array. [cite_start]Redux would introduce unnecessary boilerplate for a state tree of this size[cite: 66].
+* [cite_start]**Native Integration:** Context is built directly into React, requiring zero additional dependencies, which keeps the bundle size lightweight and build times fast[cite: 66].
+* [cite_start]**Seamless Persistence:** By tying the Context state to `localStorage` via a `useEffect` hook, we achieve the required cart persistence natively without needing external persist-gate libraries[cite: 59].
