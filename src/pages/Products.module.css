@@ -160,3 +160,29 @@
   font-size: 1.1rem;
   padding: 0 1rem;
 }
+
+.addToCartBtn {
+  width: 100%;
+  padding: 0.85rem;
+  background-color: #3b82f6; /* Vivid blue */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: auto; /* Pushes button to the bottom of the card */
+}
+
+.addToCartBtn:hover:not(:disabled) {
+  background-color: #2563eb;
+  transform: translateY(-2px);
+}
+
+.addedBtn {
+  background-color: rgba(74, 222, 128, 0.2) !important; /* Transparent Mint Green */
+  color: #4ade80 !important;
+  border: 1px solid rgba(74, 222, 128, 0.4);
+  cursor: default !important;
+}

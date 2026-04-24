@@ -13,7 +13,8 @@ const Products = () => {
   const [searchTerm, setSearchTerm] = useState("");
   
   const navigate = useNavigate();
-  const { cartItems, addToCart, updateQuantity, clearCart } = useCart();
+  // Removed updateQuantity since we no longer need it on this screen
+  const { cartItems, addToCart, clearCart } = useCart();
 
   useEffect(() => {
     const getProducts = async () => {
@@ -94,24 +95,12 @@ const Products = () => {
                 <div className={styles.price}>${product.price.toFixed(2)}</div>
 
                 {currentQuantity > 0 ? (
-                  <div className={styles.quantityControls}>
-                    <button
-                      className={styles.qtyBtn}
-                      onClick={() => updateQuantity(product.id, -1)}
-                    >
-                      -
-                    </button>
-                    <span className={styles.qtyValue}>{currentQuantity}</span>
-                    <button
-                      className={styles.qtyBtn}
-                      onClick={() => updateQuantity(product.id, 1)}
-                    >
-                      +
-                    </button>
-                  </div>
+                  <button className={`${styles.addToCartBtn} ${styles.addedBtn}`} disabled>
+                    ✓ Added to Cart
+                  </button>
                 ) : (
-                  <button
-                    className={styles.addToCartBtn}
+                  <button 
+                    className={styles.addToCartBtn} 
                     onClick={() => {
                       addToCart(product);
                       toast.success(`${product.title} added to cart!`);
