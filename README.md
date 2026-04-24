@@ -2,7 +2,7 @@
 
 A fully functional React e-commerce frontend built as a proof of work. It features mock authentication, product browsing, and a fully persistent shopping cart.
 
-**Live Deployment:** [View the Live App Here](react-ecommerce-assignment-b4whgfi4z-sagejatins-projects.vercel.app)
+**Live Deployment:** [View the Live App Here](https://react-ecommerce-assignment-zeta.vercel.app/)
 
 ## Tech Stack
 * **Framework:** React (Vite)
