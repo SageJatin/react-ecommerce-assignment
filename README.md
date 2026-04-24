@@ -2,6 +2,8 @@
 
 A fully functional React e-commerce frontend built as a proof of work. It features mock authentication, product browsing, and a fully persistent shopping cart.
 
+**Live Deployment:** [View the Live App Here](https://react-ecommerce-assignment-zeta.vercel.app/login)
+
 ## Tech Stack
 * **Framework:** React (Vite)
 * **Routing:** React Router DOM

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "../services/api";
 import styles from "./Login.module.css";
@@ -8,17 +8,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  
   const navigate = useNavigate();
-
-  useEffect(() => {
-    // Check if the token exists when the component mounts
-    const token = localStorage.getItem("token");
-    if (token) {
-      // If it exists, immediately redirect to products
-      navigate("/products");
-    }
-  }, [navigate]);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -26,12 +16,8 @@ const Login = () => {
     setLoading(true);
 
     try {
-      const data = await loginUser(username, password);
-
-      // Store token in localStorage on success
+      const data = await loginUser(username.trim(), password.trim());
       localStorage.setItem("token", data.accessToken);
-      
-      // Redirect to Products page
       navigate("/products");
     } catch {
       setError("Invalid username or password. Please try again.");
@@ -42,40 +28,37 @@ const Login = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.card}>
-        <h2 className={styles.title}>Welcome Back</h2>
+      <div className={styles.glassCard}>
+        <h1 className={styles.title}>Lume Beauty</h1>
+        <p className={styles.subtitle}>Please sign in to continue</p>
         
         {error && <div className={styles.error}>{error}</div>}
         
-        <form onSubmit={handleLogin}>
-          <div className={styles.formGroup}>
-            <label className={styles.label} htmlFor="username">Username</label>
-            <input
-              type="text"
-              id="username"
-              className={styles.input}
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              required
-            />
-          </div>
-          
-          <div className={styles.formGroup}>
-            <label className={styles.label} htmlFor="password">Password</label>
-            <input
-              type="password"
-              id="password"
-              className={styles.input}
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </div>
-          
-          <button type="submit" className={styles.button} disabled={loading}>
-            {loading ? "Logging in..." : "Login"}
+        <form onSubmit={handleLogin} className={styles.form}>
+          <input
+            type="text"
+            placeholder="Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            className={styles.input}
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className={styles.input}
+          />
+          <button type="submit" disabled={loading} className={styles.button}>
+            {loading ? "Signing in..." : "Login"}
           </button>
         </form>
+        
+        <div className={styles.testCredentials}>
+          <p>Test Credentials:</p>
+          <p>Username: <strong>emilys</strong></p>
+          <p>Password: <strong>emilyspass</strong></p>
+        </div>
       </div>
     </div>
   );

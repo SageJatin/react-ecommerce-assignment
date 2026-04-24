@@ -2,7 +2,7 @@
   padding: 2rem;
   max-width: 1000px;
   margin: 0 auto;
-  font-family: sans-serif;
+  font-family: system-ui, -apple-system, sans-serif;
 }
 
 .header {
@@ -10,16 +10,23 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 2rem;
+  color: #ffffff;
 }
 
 .backBtn {
   padding: 0.5rem 1rem;
-  background-color: #6c757d;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
   color: white;
-  border: none;
-  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
   cursor: pointer;
   text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.backBtn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .cartList {
@@ -31,11 +38,19 @@
 .cartItem {
   display: flex;
   align-items: center;
-  background: white;
-  border: 1px solid #eaeaea;
-  border-radius: 8px;
-  padding: 1rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  background: rgba(30, 30, 35, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.cartItem:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .thumbnail {
@@ -43,6 +58,10 @@
   height: 80px;
   object-fit: contain;
   margin-right: 1.5rem;
+  /* Keep a subtle white background behind the image so product photos pop */
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  padding: 0.5rem;
 }
 
 .details {
@@ -51,63 +70,81 @@
 
 .title {
   margin: 0 0 0.5rem 0;
-  font-size: 1.1rem;
-  color: #333;
+  font-size: 1.2rem;
+  color: #ffffff;
 }
 
 .price {
-  color: #666;
-  font-weight: bold;
+  color: #9ca3af;
+  font-size: 1.1rem;
 }
 
 .controls {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 2rem;
   margin-right: 1.5rem;
 }
 
 .quantityGroup {
   display: flex;
   align-items: center;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
   overflow: hidden;
 }
 
 .qtyBtn {
-  background-color: #e9ecef;
+  background: transparent;
+  color: #ffffff;
   border: none;
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem 1rem;
   cursor: pointer;
+  font-size: 1.1rem;
+  transition: background 0.2s;
+}
+
+.qtyBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .qtyValue {
-  padding: 0 1rem;
+  padding: 0 0.5rem;
+  color: #ffffff;
   font-weight: bold;
 }
 
 .subtotal {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: bold;
+  color: #4ade80; /* Mint green for money */
   min-width: 80px;
   text-align: right;
 }
 
 .removeBtn {
-  background-color: #dc3545;
-  color: white;
-  border: none;
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.3);
   padding: 0.5rem 1rem;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
-  margin-left: 1.5rem;
+  transition: all 0.2s;
+}
+
+.removeBtn:hover {
+  background-color: rgba(239, 68, 68, 0.3);
+  color: #fef2f2;
 }
 
 .summary {
   margin-top: 2rem;
-  padding-top: 2rem;
-  border-top: 2px solid #eaeaea;
+  padding: 2rem;
+  background: rgba(30, 30, 35, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -116,18 +153,22 @@
 .totalLabel {
   font-size: 1.5rem;
   margin-right: 1.5rem;
-  color: #333;
+  color: #ffffff;
 }
 
 .totalValue {
   font-size: 2rem;
   font-weight: bold;
-  color: #28a745;
+  color: #4ade80; /* Mint green for total */
 }
 
 .emptyCart {
   text-align: center;
-  font-size: 1.2rem;
-  color: #666;
+  font-size: 1.3rem;
+  color: #9ca3af;
   margin-top: 3rem;
+  background: rgba(30, 30, 35, 0.4);
+  padding: 3rem;
+  border-radius: 12px;
+  border: 1px dashed rgba(255, 255, 255, 0.2);
 }
