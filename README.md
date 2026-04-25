@@ -4,6 +4,9 @@ A fully functional React e-commerce frontend built as a proof of work. It featur
 
 **Live Deployment:** [View the Live App Here](https://react-ecommerce-assignment-zeta.vercel.app/)
 
+**Video Walkthrough:** [View the Video Here](https://www.loom.com/share/4c1d87bd361343ed86d10e11df6a1916)
+
+
 ## Tech Stack
 * **Framework:** React (Vite)
 * **Routing:** React Router DOM
