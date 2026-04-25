@@ -50,3 +50,9 @@ For this application, I chose to implement the Context API combined with standar
 * **Scope and Scale:** The global state requirements for this mini-app are limited exclusively to authentication status (tokens) and the shopping cart array. Redux would introduce unnecessary boilerplate for a state tree of this size.
 * **Native Integration:** Context is built directly into React, requiring zero additional dependencies, which keeps the bundle size lightweight and build times fast.
 * **Seamless Persistence:** By tying the Context state to `localStorage` via a `useEffect` hook, we achieve the required cart persistence natively without needing external persist-gate libraries.
+
+## Premium Features Added
+* **Architectural Refactor:** Separated UI from data-fetching logic using a dedicated `services/api.js` pattern.
+* **Glassmorphism UI:** Implemented a modern, dark-themed frosted glass aesthetic with animated gradients.
+* **Live Filtering:** Added a zero-latency search bar to instantly filter the product catalog.
+* **UX Polish:** Integrated `react-hot-toast` for sleek, non-blocking user feedback and intuitive "Added to Cart" success states.
